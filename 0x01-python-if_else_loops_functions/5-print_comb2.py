@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for a in range(0, 100):
     if a == 99:
-        print(f"%02d" % a)
+        print("{:02}".format(a))
         break
-    print(f"%02d" % a, end=", ")
+    print("{:02}".format(a), end=", ")
