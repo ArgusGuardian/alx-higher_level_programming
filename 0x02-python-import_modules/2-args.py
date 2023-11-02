@@ -6,8 +6,6 @@ if len == 1:
 elif len == 0:
     print("0 arguments.")
 else:
-    print("{} arguments:".format(len))
-counter = 0
-for arg in sys.argv[1:]:
-    counter += 1
-    print("{}: {}".format(counter, arg))
+    print("{:d} arguments:".format(len))
+for i in range(1, len(sys.argv)):
+    print("{:d}: {:s}".format(i, sys.argv[i]))
