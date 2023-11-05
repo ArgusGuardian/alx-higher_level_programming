@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
-
+/**
+ * is_palindrome - function check list if it's palindrome
+ *@head: head of the list to check
+ *Return: 1 if it's a palindrome 0 if it's not
+ */
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
