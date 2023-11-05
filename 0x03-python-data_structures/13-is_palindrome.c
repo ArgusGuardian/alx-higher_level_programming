@@ -2,37 +2,50 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * is_palindrome - function check list if it's palindrome
- *@head: head of the list to check
- *Return: 1 if it's a palindrome 0 if it's not
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
+ *
+ * Return: 1 if it is, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current = *head;
-	int counter = 0;
-	int *arr, i = 0, j;
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
+	listint_t *prev = NULL, *current = dup, *next = NULL;
 
-	if (head == NULL && *head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-
-	while (current != NULL)
+	while (1)
 	{
-		counter++;
-		current = current->next;
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
-
-	arr = malloc(counter * sizeof(int));
-	current = *head;
-	while (current != NULL)
+	while (current)
 	{
-		arr[i] = current->n;
-		current = current->next;
-		i++;
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
 	}
-	for (i = 0, j = counter - 1; i != j && i < counter / 2; i++, j--)
-	{
-		if (arr[i] != arr[j])
+	dup = prev;
+	while (dup && temp)
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
 			return (0);
-	}
-	return (1);
+	if (!dup)
+		return (1);
+	return (0);
 }
