@@ -1,8 +1,14 @@
 def roman_to_int(roman_string):
+    if not roman_string or not isinstance(roman_string, str):
+        return 0
     number = 0
     i = 0
     while i < len(roman_string):
-        if i < len(roman_string) - 1 and roman_string[i:i+2] in ["IV", "IX", "XC", "CD", "CM"]:
+        if i < len(roman_string) - 1 and roman_string[i:i+2] in ["IV",
+                                                                 "IX",
+                                                                 "XC",
+                                                                 "CD",
+                                                                 "CM"]:
             number += roman_helper(roman_string[i+1]) - \
                 roman_helper(roman_string[i])
             i += 2
