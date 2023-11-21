@@ -4,6 +4,7 @@
 
 class Square:
     """this is the square class"""
+
     def __init__(self, size=0, position=(0, 0)) -> None:
         """init function for the class square"""
         self.__size = size
@@ -26,11 +27,11 @@ class Square:
 
     def my_print(self):
         if self.__size:
-            [print("") for i in range(0, self.__position[1])]
+            [print() for i in range(0, self.__position[1])]
             for i in range(0, self.__size):
                 [print(" ", end="") for j in range(0, self.__position[0])]
                 [print("#", end="") for k in range(0, self.__size)]
-                print("")
+                print()
         else:
             print()
 
@@ -40,5 +41,5 @@ class Square:
                 len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
-            raise TypeError("position must be a tuple of 2 positive integer")
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
