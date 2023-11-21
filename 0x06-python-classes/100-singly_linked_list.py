@@ -54,18 +54,18 @@ class SinglyLinkedList:
             new_node.next_node = self.head
             self.head = new_node
         else:
-            current = self.head
-            while current.next_node is not None and current.next_node.data < value:
-                current = current.next_node
+            tmp = self.head
+            while tmp.next_node is not None and tmp.next_node.data < value:
+                tmp = tmp.next_node
 
-            new_node.next_node = current.next_node
-            current.next_node = new_node
+            new_node.next_node = tmp.next_node
+            tmp.next_node = new_node
 
     def __str__(self):
         """print elements of list followed by a new line"""
         result = []
-        current = self.head
-        while current:
-            result.append(current.data)
-            current = current.next_node
+        tmp = self.head
+        while tmp:
+            result.append(tmp.data)
+            tmp = tmp.next_node
         return '\n'.join(map(str, result))
