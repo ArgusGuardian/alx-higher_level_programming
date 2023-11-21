@@ -5,10 +5,10 @@
 class Square:
     """this is the square class"""
 
-    def __init__(self, size=0, position=(0, 0)) -> None:
+    def __init__(self, size=0, position=(0, 0)):
         """init function for the class square"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         return self.__size * self.__size
