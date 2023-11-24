@@ -10,7 +10,7 @@ My name is alaa eddine
 My name is  alaa
 
 >>> say_my_name("")
-My name is 
+My name is  
 
 >>> say_my_name(10,"alaa")
 Traceback (most recent call last):
@@ -47,6 +47,9 @@ My name is  10
 
 >>> say_my_name("",str(-10))
 My name is  -10
+
+>>> say_my_name(str(-10),str(-10))
+My name is -10 -10
 
 >>> name=['a','l','a','a']
 >>> say_my_name(name)

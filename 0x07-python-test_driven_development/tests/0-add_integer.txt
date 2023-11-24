@@ -44,9 +44,14 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> add_integer("ilyas")
+>>> add_integer("alaa")
 Traceback (most recent call last):
 TypeError: a must be an integer
+
+>>> add_integer("alas","eddine")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
 >>> add_integer(float('inf'),float('inf'))
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
@@ -63,6 +68,14 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+>>> add_integer(5,None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
 >>> add_integer(float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(10, float('nan'))
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
