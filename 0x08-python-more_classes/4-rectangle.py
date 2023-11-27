@@ -76,7 +76,7 @@ class Rectangle:
 
     def __str__(self):
         """Return a string of the rectangle using '#' characters."""
-        if not self.width or not self.height:
+        if not self.__width or not self.__height:
             return ""
         double = []
         for i in range(self.__height):
@@ -85,5 +85,8 @@ class Rectangle:
                 double.append("\n")
         return ("".join(double))
 
-    def __repr__(self) -> str:
-        return f"Rectangle({self.width},{self.height})"
+    def __repr__(self):
+        """Return the string representation of the Rectangle."""
+        rect = "Rectangle(" + str(self.__width)
+        rect += ", " + str(self.__height) + ")"
+        return (rect)
