@@ -84,7 +84,8 @@ class Rectangle:
 
         double = []
         for i in range(self.__height):
-            [double.append('#') for j in range(self.__width)]
+            [double.append(str(self.print_symbol))
+             for j in range(self.__width)]
             if i != self.__height - 1:
                 double.append("\n")
         return ("".join(double))
