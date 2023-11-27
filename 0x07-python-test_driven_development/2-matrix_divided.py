@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A function that devides all element in a matrix"""
 
+
 def matrix_divided(matrix, div):
     """Divide elements of a matrix
 
@@ -18,13 +19,13 @@ def matrix_divided(matrix, div):
         A new matrix
     """
     if (
-        not isinstance(matrix, list)
-        or matrix == []
-        or not all(isinstance(ls, list) for ls in matrix)
-        or not all(
-            isinstance(x, (int,float))
-            for x in [num for ls in matrix for num in ls]
-        )):
+            not isinstance(matrix, list)
+            or matrix == []
+            or not all(isinstance(ls, list) for ls in matrix)
+            or not all(
+                isinstance(x, (int, float))
+                for x in [num for ls in matrix for num in ls]
+            )):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats"
         )

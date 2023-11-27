@@ -10,8 +10,8 @@ def matrix_mul(m_a, m_b):
         m_b (list): The second matrix represented as a list of lists.
 
     Raises:
-        TypeError: If inputs are not lists, or if elements are not integers or floats.
-        ValueError: If matrices are empty or incompatible for multiplication.
+        TypeError: If inputs are not lists, or elements are not integers/floats
+        ValueError: If matrices are empty or incompatible for multiplication
 
     Returns:
         list: The result of matrix multiplication as a list of lists.

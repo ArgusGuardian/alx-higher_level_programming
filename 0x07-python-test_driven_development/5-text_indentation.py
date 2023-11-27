@@ -29,5 +29,5 @@ def text_indentation(text):
             print(f"{cp_str.strip()}\n")
             cp_str = ""
             alert = 1
-    if alert == 0 and not all(l == ' ' for l in cp_str):
+    if alert == 0 and not all(letter == ' ' for letter in cp_str):
         print(cp_str.strip())
