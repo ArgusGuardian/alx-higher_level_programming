@@ -78,10 +78,9 @@ class Rectangle:
         """Return a string of the rectangle using '#' characters."""
         if not self.__width or not self.__height:
             return ""
-        double = ""
+        double = []
         for i in range(self.__height):
-            row = ""
-            for j in range(self.__width):
-                row += "#"
-            double += row + '\n'
-        return double
+            [double.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                double.append("\n")
+        return ("".join(double))
