@@ -17,8 +17,8 @@ class Rectangle:
             width (int): The width of the rectangle (default is 0).
             height (int): The height of the rectangle (default is 0).
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -66,25 +66,24 @@ class Rectangle:
 
     def area(self):
         """Calculate and return the area of the rectangle."""
-        return (self.height * self.width)
+        return (self.__height * self.__width)
 
     def perimeter(self):
         """Calculate and return the perimeter of the rectangle."""
         if not self.height or not self.width:
             return 0
-        return (2*(self.height+self.width))
+        return (2*(self.__height+self.__width))
 
     def __str__(self):
         """Return a string of the rectangle using '#' characters."""
         if not self.width or not self.height:
             return ""
-        double = ""
-        for i in range(self.height):
-            row = ""
-            for j in range(self.width):
-                row += "#"
-            double += row + '\n'
-        return double
+        double = []
+        for i in range(self.__height):
+            [double.append('#') for j in range(self.__width)]
+            if i != self.__height - 1:
+                double.append("\n")
+        return ("".join(double))
 
     def __repr__(self) -> str:
         return f"Rectangle({self.width},{self.height})"
