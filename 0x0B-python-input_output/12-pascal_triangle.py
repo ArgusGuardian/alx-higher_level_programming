@@ -5,7 +5,8 @@
 def pascal_triangle(n):
     """function that creates a pascal triangle"""
     if n <= 0:
-        return [[]]
+        return []
+
     triangles = [[1]]
     while len(triangles) != n:
         tri = triangles[-1]
