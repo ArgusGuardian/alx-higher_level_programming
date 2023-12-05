@@ -5,16 +5,14 @@
 def pascal_triangle(n):
     """function that creates a pascal triangle"""
     if n <= 0:
-        return [[]]
+        return []
 
-    tri = [[1],]
-    for i in range(1, n):
-        row = [1]
-        for j in range(len(tri[i-1])):
-            if j == len(tri[i-1]) - 1:
-                row.append(1)
-            else:
-                row.append(tri[i-1][j] + tri[i-1][j+1])
-        tri.append(row)
-
-    return tri
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
