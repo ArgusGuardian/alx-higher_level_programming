@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """load json format to py object"""
+import json
 
 
 def from_json_string(my_str):
