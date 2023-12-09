@@ -90,19 +90,48 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         self.__init__(self.width, self.height, self.x, self.y)
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 5:
-            self.y = args[4]
+        if args and len(args) != 0:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        elif kwargs and len(kwargs) != 0:
+            for a, b in kwargs.items():
+                if a == "id":
+                    self.id = b
+                elif a == "width":
+                    self.width = b
+                elif a == "height":
+                    self.height = b
+                elif a == "x":
+                    self.x = b
+                elif a == "y":
+                    self.y = b
 
     def __str__(self):
         """Retrun the str() representation of the Rect class"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+
+r1 = Rectangle(10, 10, 10, 10)
+print(r1)
+
+r1.update(height=1)
+print(r1)
+
+r1.update(width=1, x=2)
+print(r1)
+
+r1.update(y=1, width=2, x=3, id=89)
+print(r1)
+
+r1.update(x=1, height=2, y=3, width=4)
+print(r1)
