@@ -117,6 +117,15 @@ class Rectangle(Base):
                 elif a == "y":
                     self.y = b
 
+    def to_dictionary(self):
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
+        }
+
     def __str__(self):
         """Retrun the str() representation of the Rect class"""
         return f"[Rectangle] ({self.id}) {self.x}/\
