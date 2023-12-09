@@ -40,6 +40,7 @@ class Base:
             return []
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """create class with **dictionary asa aguments"""
         if dictionary and dictionary != {}:
