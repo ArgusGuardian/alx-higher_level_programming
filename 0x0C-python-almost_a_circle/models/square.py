@@ -22,8 +22,8 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Funtion that updates the arguments"""
-        self.__init__(self.size, self.x, self.y)
         if args and len(args) != 0:
+            self.__init__(self.size, self.x, self.y)
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:

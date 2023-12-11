@@ -22,7 +22,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setter function for the width"""
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -38,7 +38,7 @@ class Rectangle(Base):
     def height(self, value):
         """setter function for the height"""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -52,7 +52,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """setter function for the x"""
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -68,7 +68,7 @@ class Rectangle(Base):
     def y(self, value):
         """setter function for the y"""
 
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -92,8 +92,8 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Funtion that updates the arguments"""
-        self.__init__(self.width, self.height, self.x, self.y)
         if args and len(args) != 0:
+            self.__init__(self.width, self.height, self.x, self.y)
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:
