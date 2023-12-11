@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """Module for the Square class"""
 
-from models.rectangle import Rectangle
+from .rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """Square class in the sqaure module"""
+
     def __init__(self, size, x=0, y=0, id=None):
         """function to initialize the Square instance"""
         super().__init__(size, size, x, y, id)
@@ -44,6 +46,7 @@ class Square(Rectangle):
                     self.y = b
 
     def to_dictionary(self):
+        """return dict of all atrributes"""
         return {
             "id": self.id,
             "size": self.size,
