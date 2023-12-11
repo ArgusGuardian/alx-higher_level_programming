@@ -48,10 +48,10 @@ class Square(Rectangle):
     def to_dictionary(self):
         """return dict of all atrributes"""
         return {
-            "id": self.id,
-            "size": self.size,
-            "x": self.x,
-            "y": self.y,
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y,
         }
 
     def __str__(self):

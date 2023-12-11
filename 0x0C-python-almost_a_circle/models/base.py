@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module base"""
+"""code for Module base"""
 import json
 import csv
 import turtle
@@ -20,7 +20,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """static method to to convert dict to str"""
-        if not list_dictionaries or list_dictionaries == []:
+        if not list_dictionaries or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -38,7 +38,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """static method to load dicts from json file"""
-        if not json_string or json_string == []:
+        if not json_string or json_string is None:
             return []
         return json.loads(json_string)
 
@@ -51,7 +51,7 @@ class Base:
             else:
                 new = cls(1)
             new.update(**dictionary)
-            return new
+        return new
 
     @classmethod
     def load_from_file(cls):

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Rectangle Module"""
+
 from .base import Base
 
 
@@ -23,7 +24,7 @@ class Rectangle(Base):
     def width(self, value):
         """setter function for the width"""
         if type(value) is not int:
-            raise TypeError(f"width must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
@@ -31,7 +32,6 @@ class Rectangle(Base):
     @property
     def height(self):
         """getter function for the height"""
-
         return self.__height
 
     @height.setter
@@ -39,7 +39,7 @@ class Rectangle(Base):
         """setter function for the height"""
 
         if type(value) is not int:
-            raise TypeError(f"height must be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
@@ -53,7 +53,7 @@ class Rectangle(Base):
     def x(self, value):
         """setter function for the x"""
         if type(value) is not int:
-            raise TypeError(f"x must be an integer")
+            raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
@@ -61,7 +61,6 @@ class Rectangle(Base):
     @property
     def y(self):
         """getter function for the y"""
-
         return self.__y
 
     @y.setter
@@ -69,7 +68,7 @@ class Rectangle(Base):
         """setter function for the y"""
 
         if type(value) is not int:
-            raise TypeError(f"y must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
@@ -80,11 +79,11 @@ class Rectangle(Base):
 
     def display(self):
         """function that prints the rectangle"""
-        for j in range(self.y):
+        for j in range(self.__y):
             print()
 
         for i in range(self.__height):
-            for k in range(self.x):
+            for k in range(self.__x):
                 print(" ", end="")
             for j in range(self.__width):
                 print("#", end="")
@@ -120,10 +119,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         return {
             "id": self.id,
-            "width": self.width,
-            "height": self.height,
-            "x": self.x,
-            "y": self.y,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y,
         }
 
     def __str__(self):
