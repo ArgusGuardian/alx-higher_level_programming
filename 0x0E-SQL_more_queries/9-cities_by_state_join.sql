@@ -1,4 +1,4 @@
 -- list all the cities in the database
 USE hbtn_0d_usa;
-SELECT DISTINCT cities.id, cities.name, states.name
+SELECT cities.id, cities.name, DISTINCT states.name
 ORDER BY cities.id;
