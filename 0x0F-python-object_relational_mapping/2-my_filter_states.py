@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""list all the states that match the last argument"""
 import MySQLdb
 import sys
 
